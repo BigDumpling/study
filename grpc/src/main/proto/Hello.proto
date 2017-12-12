@@ -1,0 +1,17 @@
+syntax = "proto3";
+option java_package = "com.example.demo.rpc";
+option java_outer_classname = "HelloProto";
+
+message HelloRequest {
+    string name = 1;
+    int32 age = 2;
+    int32 sex = 3;
+}
+
+message HelloReply {
+    string msg = 1;
+}
+
+service Greeter {
+    rpc sayHello (HelloRequest) returns (HelloReply);
+}
